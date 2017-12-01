@@ -142,7 +142,7 @@ def parse_response(response)
   }
 
   say_headers = -> (_response) {
-    %w(refresh-token access-token client uid).each do |header_name|
+    %w(refresh-token access-token firebase-token client uid).each do |header_name|
       unless _response.header[header_name].nil?
         say "#{TAB}#{TAB}#{TAB} #{'Header'.gray} #{header_name}: #{_response.header[header_name]}"
         HEADERS[header_name] = _response.header[header_name]
